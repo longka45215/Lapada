@@ -1,0 +1,24 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using WEB_Shop_PRN.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div style="display: flex; flex-wrap:wrap">
+
+    <div style="border: 1px solid black; width: 200px; margin-right:20px; display:flex">
+        <img src="https://wallpaperaccess.com/full/1124992.jpg" width="200px"></img>
+        <div>
+            <p>@ViewBag.product.ProductName</p>
+            <p>@ViewBag.product.ProductNumber</p>
+            <p>@ViewBag.product.ProductNumber</p>
+            <p>@ViewBag.product.ProductPrice</p>
+        </div>
+        <div style="width:500px;">
+            <a asp-controller="Home" asp-action="Buy" asp-route-id=@ViewBag.product.ProductId>Buy</a>
+            <a asp-controller="Home" asp-action="Add" asp-route-id=@ViewBag.product.ProductId>Add to Cart</a>
+        </div>
+    </div>
+
+</div>

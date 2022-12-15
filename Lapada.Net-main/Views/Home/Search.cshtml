@@ -1,0 +1,1684 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using WEB_Shop_PRN.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="assets/font/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="assets/css/styleLazada.css">
+<link rel="icon" type="image/x-icon" href="assets/imgLazada/logoIcon.png">
+<title>LAPADA</title>
+<style>
+    * {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.topHeader ul {
+    display: flex;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.linkTopHeader:hover,
+.linkTopHeader1:hover {
+    color: #f36d00;
+}
+
+.linkTopHeader,
+.linkTopHeader1 {
+    color: #0f1568;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    text-align: left;
+    white-space: nowrap;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+.topHeader {
+    height: 25px;
+    background-color: #f7f7f7;
+
+}
+
+.topHeader ul {
+    margin-left: 300px;
+}
+
+/* .botHeader {} */
+
+#header {
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.botHeader {
+    height: 90px;
+    padding-top: 15px;
+    display: flex;
+    background-color: #fff;
+
+}
+
+.homeLink {
+    display: flex;
+}
+
+.cate {
+    height: 30px;
+    background-color: #fff;
+}
+
+.logo {
+    margin-left: 150px;
+    margin-right: 90px;
+    cursor: pointer;
+}
+
+.search {
+    margin-right: 40px;
+}
+
+.search input {
+    border: none;
+    background-color: #eff0f5;
+    width: 688px;
+    height: 45px;
+    padding-left: 18px;
+    padding-top: 5px;
+    font-size: 17px;
+    border-radius: 3px 0 0 3px;
+    resize: none;
+    outline: none;
+}
+
+.search i {
+    text-align: center;
+    background-color: #f57224;
+    padding: 14px;
+    margin-left: -45px;
+    border-radius: 0 3px 3px 0;
+    font-size: 17px;
+    font-weight: bolder;
+    color: #f7f7f7;
+    cursor: pointer;
+}
+
+.cart {
+    margin-top: 3px;
+}
+
+.cart i {
+    cursor: pointer;
+    font-size: 35px;
+    color: #0f1568;
+}
+
+body {
+    background-color: #f5f5f5;
+
+}
+
+#container {
+    height: fit-content;
+    padding-top: 20px;
+    margin-top: 100px;
+    background: #f5f5f5;
+}
+
+.category {
+    /* height: 5000px; */
+    background-color: #fff;
+    /* margin-top: 150px; */
+}
+
+.slideshow-container {
+    border: none;
+    width: 1519px; 
+    position: relative;
+    margin: auto; 
+    height: 344px;
+    /*position: relative;*/
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+
+
+.mySlides {
+    width: 900px;
+    margin: auto;
+}
+
+.img1 {
+    width: 1519px;
+    height: 344px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("assets/imgLazada/sl1.jpg");
+}
+
+.img2 {
+    width: 1519px;
+    height: 344px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("assets/imgLazada/sl2.jpg");
+}
+
+.img3 {
+    width: 1519px;
+    height: 344px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("assets/imgLazada/sl3.jpg");
+}
+
+.img4 {
+    width: 1519px;
+    height: 344px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("assets/imgLazada/sl4.jpg");
+}
+
+.img5 {
+    width: 1519px;
+    height: 344px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("assets/imgLazada/sl5.jpg");
+}
+
+.img6 {
+    width: 1519px;
+    height: 344px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("assets/imgLazada/sl6.jpg");
+}
+
+.category {
+    border: solid 1px silver;
+    position: absolute;
+    top: 116px;
+    left: 180px;
+    height: fit-content;
+    width: fit-content;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+}
+
+.category ul {
+    list-style: none;
+    line-height: 26px;
+    padding-left: 5px;
+}
+
+.category li:hover {
+    background-color: #b7b7b7;
+    opacity: 0.5;
+}
+
+.category a:hover {
+    color: #f36d00;
+}
+
+.category a {
+    color: #757575;
+    font-size: 13px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.categoryLst {
+    height: 297px;
+    width: 1188px;
+    margin: 15px 0 0 180px;
+    background-color: #fff;
+}
+
+.sliderImg {
+    margin-top: -3px;
+}
+
+.lstCate p {
+    margin-left: 180px;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.suggest p {
+    margin-left: 180px;
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+.imgShow {
+    border-top: 1.5px solid rgb(194, 194, 194);
+    display: flex;
+    width: 1188px;
+    margin-left: 180px;
+    justify-content: space-between;
+}
+
+.imgShow img {
+    width: 32.5%;
+    /* height: 100%; */
+
+}
+
+
+#footer {
+    width: 100%;
+    height: 500px;
+    background-color: #f4f4f6;
+}
+
+.cate {
+    display: flex;
+    color: #0f136d;
+    cursor: pointer;
+    /* justify-content: start; */
+}
+
+.cate:hover {
+    color: #f36d00;
+}
+
+
+
+
+.cate p {
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 500;
+    margin-left: 180px;
+
+}
+
+.cate:hover+.categorySearch {
+    display: block;
+}
+
+
+
+.cate .ti-angle-down {
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: 800;
+}
+
+
+.categorySearch {
+    display: none;
+}
+
+.categorySearch {
+    border: solid 1px silver;
+    top: 150px;
+    left: 150px;
+    height: fit-content;
+    width: fit-content;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+}
+
+.categorySearch ul {
+    list-style: none;
+    line-height: 26px;
+    padding-left: 5px;
+}
+
+.categorySearch li:hover {
+    background-color: #b7b7b7;
+    opacity: 0.5;
+}
+
+.categorySearch a:hover {
+    color: #f36d00;
+}
+
+.categorySearch a {
+    color: #757575;
+    font-size: 13px;
+}
+
+.homeLink {
+    background-color: #fff;
+    padding-bottom: 10px;
+    margin-top: 150px;
+}
+
+.homeLink a {
+    margin-left: 150px;
+    margin-top: 5px;
+    color: #1a9cb7;
+}
+
+.homeLink p {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #717171;
+}
+
+.homeLink i {
+    margin-top: 10px;
+    margin-right: 5px;
+    color: #717171;
+    margin-left: 10px;
+}
+
+.contain {
+    width: 1180px;
+    margin: auto;
+}
+
+#containCart {
+    margin-top: 160px;
+    display: flex;
+}
+
+.selectAll {
+    width: 788px;
+    height: 40px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.enter p {
+    margin-left: 40px;
+    font-size: 15px;
+    font-weight: 450;
+    margin-top: -22px;
+    color: #757575;
+}
+
+.enter input {
+    margin-left: 10px;
+    width: 17px;
+    height: 17px;
+    margin-top: 5px;
+}
+
+.enter {
+    margin-top: 7px;
+}
+
+.left {
+    width: 788px;
+    height: fit-content;
+    margin-left: 150px;
+}
+
+.del {
+    margin-right: 8px;
+    margin-top: 8px;
+    display: flex;
+}
+
+.right {
+    width: 380px;
+    height: fit-content;
+    background-color: #fff;
+    margin-left: 15px;
+}
+
+.locaDetail {
+    display: flex;
+}
+
+.location {
+    margin-left: 15px;
+    margin-top: 10px;
+    border-bottom: 1px solid #b7b7b7;
+    margin-right: 15px;
+    padding-bottom: 10px;
+}
+
+.location p {
+    margin-bottom: 10px;
+    color: #757575;
+    font-size: 14px;
+}
+
+.location i {
+    font-size: 25px;
+    color: #757575;
+}
+
+.location .locaDetail p {
+    color: rgb(33, 33, 33);
+    font-size: 13px;
+    margin-top: 7px;
+    margin-left: 7px;
+    font-weight: 450;
+}
+
+.inforOrder {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 10px;
+    /* border-bottom: 1px solid #757575; */
+}
+
+.inforOrder p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.tempCal,
+.ship {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tempCal p,
+.ship p {
+    color: #6a6a6a;
+    font-size: 14px;
+}
+
+.tempCal .price,
+.ship .price {
+    font-size: 14px;
+    color: black;
+    font-weight: 450;
+}
+
+.total {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total p {
+    font-size: 18px;
+}
+
+.totalPrice p {
+    font-size: 16px;
+    color: #f36d00;
+    font-weight: 450;
+}
+
+.addInfor {
+    margin-top: 5px;
+    margin-left: 230px;
+}
+
+.addInfor p {
+    font-size: 12px;
+    color: black;
+    font-weight: 450;
+}
+
+.cf input {
+    margin-top: 20px;
+    width: 90%;
+    margin-left: 5%;
+    height: 40px;
+    border: none;
+    background-color: #f36d00;
+    color: white;
+}
+
+.cf {
+    padding-bottom: 20px;
+}
+
+.vocher {
+    margin-left: 35px;
+}
+
+.enterOrder {
+    border: 1px solid #1a9cb7;
+    height: 38px;
+    width: 200px;
+    margin-right: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.smt {
+    border: none;
+    background-color: #1a9cb7;
+    color: white;
+    height: 38px;
+    width: 110px;
+    font-size: 14px;
+    font-weight: 450;
+}
+
+.homeLinkPr {
+    margin-top: 10px;
+    display: flex;
+    margin-left: 150px;
+}
+
+.homeLinkPr i {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#containPr {
+    margin-top: 160px;
+}
+
+.detailProduct {
+    width: 1230px;
+    height: fit-content;
+    margin: auto;
+    background-color: #fff;
+    margin-top: 15px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.detailProduct img {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.nameProduct {
+    width: 520px;
+    font-size: 22px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.addressShip {
+    width: 330px;
+    padding-bottom: 20px;
+    height: fit-content;
+    background-color: #fafafa;
+}
+
+.brandPro {
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-bottom: 1px solid #b7b7b765;
+}
+
+.brandPro p {
+    margin-right: 5px;
+    margin-bottom: 20px;
+}
+
+.pricePro {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-bottom: 1px solid #b7b7b765;
+    padding-bottom: 15px;
+}
+
+.priceVND {
+    font-size: 30px;
+    color: #f36d00;
+    margin-bottom: 10px;
+}
+
+.endow {
+    display: flex;
+}
+
+.endowPrice {
+    margin-left: 150px;
+}
+
+.patternPro {
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.quantityPro {
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.quantityPro {
+    display: flex;
+    margin-top: 30px;
+}
+
+.quantityPro p {
+    width: 92px;
+}
+
+.detaiPro {
+    margin-right: 5.5px;
+}
+
+
+
+.quantityPro span button {
+    text-align: center;
+    border: none;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #b7b7b7;
+    /* background-color: #dadada; */
+}
+
+.quantityPro span button:hover {
+    background-color: #dadada;
+    color: #fff;
+}
+
+.quantityPro span input {
+    border: none;
+    text-align: center;
+    text-align: center;
+    font-size: 17px;
+    resize: none;
+    outline: none;
+}
+
+.buyBtn {
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-right: 15px;
+}
+
+.buyBtn input {
+    border: none;
+    width: 255px;
+    height: 44px;
+    /* vertical-align: middle; */
+}
+
+.buyBtn .btn1 {
+    background-color: #ffb916;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.buyBtn .btn1:hover {
+    background-color: #e19d00;
+    font-size: 16px;
+    color: #fff;
+}
+
+.buyBtn .btn2 {
+    background-color: #f57224;
+    font-size: 16px;
+    color: #fff;
+}
+
+.buyBtn .btn2:hover {
+    background-color: #d65205;
+    font-size: 16px;
+    color: #fff;
+}
+
+.optionShip p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #757575;
+}
+
+.fullShip {
+    margin-left: 15px;
+    margin-top: 25px;
+}
+
+.localShip {
+    display: flex;
+    margin-top: 15px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #7575752f;
+}
+
+.localShip p {
+    font-size: 14px;
+    width: 190px;
+}
+
+.localShip a {
+    font-size: 13px;
+    margin-left: 20px;
+    color: #1a9cb7;
+}
+
+.standard {
+    margin-top: 15px;
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #7575752f;
+}
+
+.standard .GH {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+.standard .free {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-left: 70px;
+}
+
+.payMoney {
+    margin-top: 15px;
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #7575752f;
+}
+
+.payMoney p {
+    font-size: 14px;
+    width: 250px;
+}
+
+.tableReview {
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #b7b7b7;
+}
+
+.votePositive,
+.orderTrue,
+.rateResponse {
+    width: calc(100%/3);
+    font-size: 12px;
+    color: #757575;
+}
+
+.tableReview h1 {
+    font-size: 26px;
+    margin-top: 20px;
+    font-weight: 450;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.tableReview p {
+    margin-top: 10px;
+}
+
+.welcomeShop {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.welcomeShop a {
+    font-size: 13px;
+    font-weight: 500;
+    color: #16849b;
+}
+
+.middelProduct {
+    width: 1230px;
+    height: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.presentPro {
+    width: 1000px;
+    background-color: #fff;
+}
+
+.rightMiddel {
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+}
+
+.presentPro h1 {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 18px;
+    font-weight: 450;
+    background-color: rgba(0, 0, 0, .02);
+    padding: 14px 0;
+    padding-left: 14px;
+}
+
+.textDetailProduct {
+    white-space: pre-line;
+    color: rgba(0, 0, 0, .8);
+    font-size: .875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.7;
+}
+
+.inforProductDetail {
+    width: 100%;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+    font-size: 16px;
+    white-space: inherit;
+    color: rgba(0, 0, 0, .8);
+    /* font-size: .875rem; */
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+    line-height: 1.7;
+}
+
+.botProduct {
+    width: 1000px;
+    height: fit-content;
+    margin: 15px auto;
+}
+
+.allAttr {
+    background-color: #fffbf8;
+    border: 1px solid #f9ede5;
+    display: flex;
+    margin: 20px;
+}
+
+.voteStar {
+    width: 20%;
+    height: 70px;
+}
+
+.comment {
+    display: flex;
+    width: 691px;
+    height: 84px;
+}
+
+.fiveStar,
+.fourStar,
+.threeStar,
+.twoStar,
+.oneStar {
+    width: 100px;
+    height: 40px;
+    margin-right: 30px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #bbb;
+    background-color: #fff;
+}
+
+/* .haveComment {} */
+
+/* .haveImage {} */
+
+
+
+.topContainerShop {
+    width: 100%;
+    height: fit-content;
+    background-color: #fff;
+    margin-top: 145px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+
+}
+
+.rightInforShop {
+    width: 800px;
+    height: fit-content;
+    /* background-color: #1a9cb7; */
+}
+
+.topContainerShop .inforShop {
+    width: 400px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    margin-top: 35px;
+    border-radius: 5px;
+}
+
+.topContainerShop .inforShop {
+    display: block;
+}
+
+.topContainerShop .inforShop .nameAndAvt {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.topContainerShop .inforShop .nameAndAvt img {
+    border-radius: 50%;
+    border: 4px solid #bbb;
+}
+
+.topContainerShop .inforShop .nameAndAvt p {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+.twoBtnView {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.twoBtnView a {
+    color: #fff;
+    padding: 5px 40px;
+    border: 1px solid #fff;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+
+.rightInforShop {
+    display: flex;
+    margin-top: 60px;
+
+}
+
+.leftTopViewShop {
+    margin-right: 100px;
+}
+
+.rightTopViewShop {
+    margin-left: 100px;
+}
+
+.leftTopViewShop p,
+.rightTopViewShop p {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.botInfor {
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+.botInfor ul {
+    display: flex;
+    list-style-type: none;
+    margin-left: 72px;
+}
+
+.botInfor ul li {
+    margin-right: 80px;
+}
+
+.botInfor ul li a {
+    font-size: 15px;
+    color: black;
+}
+
+.botInfor ul li a:hover {
+    font-size: 15px;
+    color: #f36d00;
+}
+
+#containLogin {
+    margin-top: 200px;
+}
+
+.topLogin {
+    text-align: center;
+}
+
+.midelLogin {
+    width: 820px;
+    height: fit-content;
+    background-color: #fff;
+    margin: 30px auto;
+    display: flex;
+    border-radius: 3px;
+}
+
+.leftLogin {
+    width: 500px;
+    margin-left: 20px;
+}
+
+.leftLogin p {
+    font-size: 12px;
+    margin-bottom: 7px;
+    margin-top: 20px;
+}
+
+.leftLogin input {
+    width: 80%;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+}
+
+.topLogin h1 {
+    font-size: 22px;
+    font-weight: 450;
+}
+
+.leftLogin a {
+    color: #16849b;
+    margin-left: 310px;
+}
+
+.rightLogin {
+    margin-top: 30px;
+}
+
+.rightLogin input {
+    padding: 17px 90px;
+    background-color: #f57224;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.rightLogin input:hover {
+    background-color: #d65205;
+}
+
+.rightLogin p {
+    color: #757575;
+    font-style: 15px;
+}
+
+.rightLogin a {
+    color: #1a9cb7;
+}
+
+.fullBotLogin {
+    width: 900px;
+    margin: auto;
+    padding: 10px 30px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+
+.citySignup {
+    margin-top: -30px;
+    margin-bottom: 15px;
+}
+
+.citySignup .city {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: black;
+}
+
+.citySignup .city:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.citySignup p {
+    font-size: 12px;
+    margin-bottom: 7px;
+    margin-top: 20px;
+    color: black;
+}
+
+.veriSignup {
+    display: flex;
+}
+
+.veriSignup input {
+    margin-top: -10px;
+}
+
+.veriSignup p {
+    width: 300px;
+    font-size: 12px;
+    margin-top: -5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.SignUpBtn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.optionLinkLogin {
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+.fullBotLogin .sendBtn input {
+    background-color: #f57224;
+}
+
+.fullBotLogin .sendBtn input:hover {
+    background-color: #d65205;
+}
+
+#containChangeInfor {
+    margin-top: 150px;
+    display: flex;
+}
+
+.changeInforLeft {
+    width: 400px;
+    height: fit-content;
+}
+
+
+
+.nameProfile img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid #757575;
+}
+
+.nameProfile {
+    display: flex;
+    margin-left: 200px;
+    margin-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    border-bottom: 1px solid #b7b7b7;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.nameMainProfile p {
+    margin-bottom: 17px;
+}
+
+.mainProfile ul li {
+    margin-bottom: 20px;
+}
+
+.mainProfile ul li a {
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, .65);
+}
+
+.mainProfile ul {
+    list-style-type: none;
+}
+
+.mainProfile {
+    margin-left: 200px;
+
+}
+
+.orderProfile {
+    margin-left: 200px;
+
+}
+
+.nameMainProfile {
+    display: flex;
+}
+
+.orderProfile {
+    display: flex;
+}
+
+.changeInforProfileUser {
+    display: flex;
+}
+
+.changeInforRight {
+    width: 993px;
+    height: fit-content;
+    background-color: #fff;
+}
+
+.topChangeInfor {
+    border-bottom: 1px solid #b7b7b7;
+    padding-bottom: 20px;
+    margin: 15px 40px;
+}
+
+.changeLeft {
+    display: flex;
+}
+
+.changeLeft {
+    width: 600px;
+}
+
+.changeLeftLeft p {
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+.changeLeft {
+    margin: 15px 60px;
+}
+
+.changeAvt img {
+    border-radius: 50%;
+    border: 2px solid #757575;
+
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.custom-file-input::before {
+    content: 'Chọn Ảnh';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 3px;
+    padding: 13px 17px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 500;
+    font-size: 14px;
+    color: #555;
+}
+
+.custom-file-input:hover::before {
+    border-color: rgb(120, 120, 120);
+    /* background-color: rgb(145, 145, 145); */
+}
+
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.btnInputChoosen input {
+    width: 100px;
+}
+
+.changeAvt {
+    text-align: center;
+    width: 300px;
+    margin-bottom: 90px;
+}
+
+.changeAvt img {
+    margin-bottom: 20px;
+}
+
+.changeAvt input {
+    margin-left: 20px;
+}
+
+.saveChangeProfile {
+    border: none;
+    padding: 10px 25px;
+    background-color: #f36d00;
+    color: #fff;
+    font-size: 15px;
+}
+
+.saveChangeProfile:hover {
+    background-color: #d65205;
+}
+
+
+    .proH:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    .brandS input[type='checkbox'] {
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-right: 7px;
+        border: 1px solid #EFF0F5;
+        accent-color: rgb(246 130 61);
+    }
+
+    input[type='checkbox']:hover {
+        outline: 1px solid rgb(246 130 61);
+        cursor: pointer;
+    }
+
+    input[type='checkbox'] {
+        width: 14px !important;
+        height: 14px !important;
+        margin: 5px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        outline: 1px solid rgb(24 144 255);
+        border-radius: 3px;
+        box-shadow: none;
+        font-size: 0.8em;
+        text-align: center;
+        line-height: 1em;
+        background: rgb(255, 255, 255);
+    }
+
+    body{
+        background-color: #fff;
+    }
+
+        input[type='checkbox']:checked:after {
+            content: '✔';
+            color: rgb(246 130 61);
+        }
+</style>
+  
+
+    <div style="height: 110px" id="header">
+    <div class="topHeader">
+
+        <ul>
+            @if(ViewBag.User != null){
+                <li><a class="linkTopHeader1" href="mainProductShop" target="_blank">BÁN HÀNG CÙNG LAZADA</a></li>
+                <li><a class="linkTopHeader1" href="#">CHĂM SÓC KHÁCH HÀNG</a></li>
+                <li><a class="linkTopHeader" href="myOrder">KIỂM TRA ĐƠN HÀNG</a></li>
+                @*<li><a class="linkTopHeader" href="changeInfor">TÀI KHOẢN ${sessionScope.acc.getUserID().toUpperCase()}</a></li>
+                <li><a class="linkTopHeader" href="logout">ĐĂNG XUẤT</a></li>*@
+            }
+            @*<c:if test="${sessionScope.acc != null}">
+
+            </c:if>
+            <c:if test="${sessionScope.acc == null}">*@
+            @if (ViewBag.User == null)
+            {
+                <li><a class="linkTopHeader1" href="mainProductShop" target="_blank">BÁN HÀNG CÙNG LAZADA</a></li>
+                <li><a class="linkTopHeader1" href="#">CHĂM SÓC KHÁCH HÀNG</a></li>
+                <li><a class="linkTopHeader" asp-controller="Home" asp-action="CheckOrder">KIỂM TRA ĐƠN HÀNG</a></li>
+                @*<li><a class="linkTopHeader" asp-controller="Home" asp-action="Login">ĐĂNG NHẬP</a></li>
+                <li><a class="linkTopHeader" href="signup">ĐĂNG KÝ</a></li>*@
+            }
+            @*</c:if>
+            <c:if test="${sessionScope.acc.getUserStatus() == 3}">
+                <li><a class="linkTopHeader1" href="admin" target="_blank">Quản lý</a></li>
+            </c:if>*@
+        </ul>
+
+    </div>
+    <div class="botHeader">
+        <div class="logo">
+            <a asp-controller="Home" asp-action="Home"><img src="https://scontent.fhan14-2.fna.fbcdn.net/v/t1.15752-9/311277839_530609275576335_6583479966941620848_n.png?_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_ohc=IDajbLFGcFgAX9oUjo-&_nc_ht=scontent.fhan14-2.fna&oh=03_AdT40sfUXUAQVyeDH3XprnmatLqmdT3WO1abScxaKfRLUA&oe=63925EB9" alt="logo" width="130px"></a>
+        </div>
+        <div class="search">
+            <form asp-controller="Home" asp-action="Search" method="get">
+                <input name="searchLapada" type="text" placeholder="Tìm kiếm trên Lapada">
+                <i style="position: absolute; height: 45px; width: 45px;" class="ti-search">
+                    <input style="position: relative; width: 47px;height: 45px;margin-top: -35px; margin-left: -14px;
+                       background-color: rgba(255, 255, 255, 0.033);" type="submit" value="">
+                </i>
+            </form>
+        </div>
+        <div class="cart">
+            <a asp-controller="Home" asp-action="Cart" asp-route-id="">
+                <i class="mdi mdi-cart-outline">Cart</i>
+            </a>
+        </div>
+    </div>
+        </div>
+    <div style="margin-top: 150px" class="cate">
+        <p>Danh mục</p>
+        <div class="ti-angle-down"></div>
+    </div>
+    </div>
+
+    <div style="" id="contain">
+        <div class="homeLink" style="margin-top: 10px; border-bottom: 1px solid #EFF0F5; margin-left: 150px; padding-top: 10px; margin-right: 150px">
+            <a style="margin-left: -3px;" href="Home">Trang chủ</a>
+            <i class="ti-angle-right"></i>
+            <p>Kết quả tìm kiếm</p>
+        </div>
+        <div style="margin-left: 370px; display: flex; margin-top: 20px; border-bottom: 1px solid #EFF0F5; padding-bottom: 20px;
+             margin-right: 170px;" class="topfilter">
+            <div class="leftTop" style="width: 50%;">
+                <p style="font-size: 18px; font-weight: 400; margin-bottom: 10px;">@ViewBag.key</p>
+            <p style="font-size: 14px;">@ViewBag.size mặt hàng được tìm thấy theo "@ViewBag.key"</p>
+            </div>
+            <div id="sortByKey" class="rightTop" style="display: flex; width: 50%;">
+                <p style="margin-left: 170px; font-size: 14px; margin-top: 40px; margin-right: 10px;">Sắp xếp theo: </p>
+                <select style="width: 200px; height: 40px; margin-top: 25px; outline: none;" name="" id="" onchange="javascript:handleSelect(this)">
+                    <option value="df">Phù hợp nhất</option>
+                    <option value="tc">Giá từ thấp tới cao</option>
+                    <option value="ct">Giá từ cao xuống thấp</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div style="display: flex">
+            <div style="width: 20%; height: 1000px; margin-left: 50px;" class="filterPoduct">
+                <div style="width: 200px; margin-left: 100px;" class="lstOption">
+                    <div style="padding-bottom: 15px; border-bottom: 1px solid #EFF0F5; margin-top: 15px; margin-right: 15px;"
+                         class="brandS">
+                        @*<p style="font-size: 14px; font-weight: 500;">Thương hiệu</p>
+                        <c:forEach items="${lstBrand}" var="o">
+                            <div style="display: flex; margin-top: 15px;">
+                                <input type="checkbox" name="check" onclick="onlyOne(this)" value="${o}" />
+                                <span style="overflow: hidden; font-size: 13px; margin-top: 3px;">${o}</span>
+                            </div>
+                        </c:forEach>*@
+
+                    </div>
+                    <div style="padding-bottom: 15px; border-bottom: 1px solid #EFF0F5; margin-top: 15px; margin-right: 20px;"
+                         class="brandS">
+                        @*<p style="font-size: 14px; font-weight: 500;">Vật Liệu</p>
+                        <c:forEach items="${lstMaterial}" var="o">
+                            <div style="display: flex; margin-top: 15px;">
+                                <input type="checkbox" name="check1" onclick="onlyOne1(this)" value="${o}" />
+                                <span style="overflow: hidden; font-size: 13px; margin-top: 3px;">${o}</span>
+                            </div>
+                        </c:forEach>*@
+                    </div>
+                    <div style="padding-bottom: 15px; border-bottom: 1px solid #EFF0F5; margin-top: 15px; margin-right: 20px;"
+                         class="brandS">
+                        @*<p style="font-size: 14px; font-weight: 500;">Khoảng giá</p>
+                        <div style="display: flex; margin-top: 15px">
+                            <input style="width: 100px" type="number" placeholder="Từ" id="priceone">
+                            <p>-</p>
+                            <input style="width: 100px; height: 30px" type="number" placeholder="Đến" id="pricesecond">
+                        </div>
+                        <button style="width: 207px; margin-top: 15px; height: 35px; color: #fff; background-color: rgb(238, 77, 45); border: none;
+                                outline: none">
+                            Áp Dụng
+                        </button>*@
+                    </div>
+                </div>
+
+            </div>
+            <div id="content" style="margin-top: 20px; width: 70%" class="listProduct">
+
+                <div style="display: flex; flex-wrap: wrap; width: 100%; margin: 0 170px 50px 20px" class="product">
+                    @foreach (Product p in ViewBag.product)
+                    {
+                        <a asp-controller="Home" asp-action="DetailProduct" asp-route-id="@p.ProductId" class="proH" style="margin-right: 10px; margin-bottom: 10px">
+                                    <div style="width: 25%; height: 325px; padding: 0 10px; margin: 15px 10px 0 0;" class="productCount">
+                                        <div style="width: 210px; height: 325px; background-color: white;" class="product-lst">
+                                            <img src=@p.ProductImage width="220px" height="220px" alt="alt" />
+                                            <p style="width: 173px; height: 36px;font-size: 14px ;line-height: 18px; color: black; overflow: hidden; margin: 10px 5px 5px 5px">@p.ProductName</p>
+                                            <div style="display: flex">
+                                                <p style="margin: 5px 5px 0 7px; color: #f57224; font-size: 18px">@p.ProductPrice</p>
+                                            </div>
+                                            <p style="margin: 3px 5px 0 160px; opacity: 0.7; font-size: 12px; color: black">
+                                                Còn
+                                                @p.ProductNumber
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                    }
+                                
+                            
+
+                </div>
+                <!--phan trang-->
+                
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <jsp:include page="footer.jsp" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        //                                    function handleSelect(elm)
+        //                                    {
+        //
+        //                                        window.location = elm.value;
+        //                                    }
+
+
+        $(document).ready(function () {
+            $("#sortByKey").change(function () {
+                $.ajax({
+                    //                                                url: "/Lapada/sortProduct",
+                    url: "/Lapada/tc",
+                    type: 'GET',
+                    data: { keyname: $('#sortByKey option:selected').val() },
+                    success: function (data) {
+                        var row = document.getElementById("content");
+                        row.innerHTML = data;
+                    }
+                });
+            });
+        });
+
+        function sendPage(el) {
+            var i = el;
+            $.ajax({
+                url: "/Lapada/tc",
+                type: "get", //send it through get method
+                data: {
+                    page: i
+                },
+                success: function (data) {
+                    var row = document.getElementById("content");
+                    row.innerHTML = data;
+                },
+                error: function (xhr) {
+                    //Do Something to handle error
+                }
+            });
+        }
+
+        function onlyOne(checkbox) {
+            var checkboxes = document.getElementsByName('check')
+            checkboxes.forEach((item) => {
+                if (item !== checkbox)
+                    item.checked = false
+            })
+        }
+        function onlyOne1(checkbox) {
+            var checkboxes = document.getElementsByName('check1')
+            checkboxes.forEach((item) => {
+                if (item !== checkbox)
+                    item.checked = false
+            })
+        }
+        function onlyOne2(checkbox) {
+            var checkboxes = document.getElementsByName('check2')
+            checkboxes.forEach((item) => {
+                if (item !== checkbox)
+                    item.checked = false
+            })
+        }
+
+    </script>

@@ -1,0 +1,1885 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using WEB_Shop_PRN.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="assets/font/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="assets/css/styleLazada.css">
+<link rel="icon" type="image/x-icon" href="assets/imgLazada/logoIcon.png">
+<title>LAZADA</title>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .topHeader ul {
+        display: flex;
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .linkTopHeader:hover,
+    .linkTopHeader1:hover {
+        color: #f36d00;
+    }
+
+    .linkTopHeader,
+    .linkTopHeader1 {
+        color: #0f1568;
+        font-size: 12px;
+        height: 25px;
+        line-height: 25px;
+        text-align: left;
+        white-space: nowrap;
+        margin-right: 50px;
+        margin-top: 10px;
+    }
+
+    .topHeader {
+        height: 25px;
+        background-color: #f7f7f7;
+    }
+
+        .topHeader ul {
+            margin-left: 300px;
+        }
+
+    /* .botHeader {} */
+
+    #header {
+        height: 150px;
+        width: 100%;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+    }
+
+    .botHeader {
+        height: 90px;
+        padding-top: 15px;
+        display: flex;
+        background-color: #fff;
+    }
+
+    .homeLink {
+        display: flex;
+    }
+
+    .cate {
+        height: 30px;
+        background-color: #fff;
+    }
+
+    .logo {
+        margin-left: 150px;
+        margin-right: 90px;
+        cursor: pointer;
+    }
+
+    .search {
+        margin-right: 40px;
+    }
+
+        .search input {
+            border: none;
+            background-color: #eff0f5;
+            width: 688px;
+            height: 45px;
+            padding-left: 18px;
+            padding-top: 5px;
+            font-size: 17px;
+            border-radius: 3px 0 0 3px;
+            resize: none;
+            outline: none;
+        }
+
+        .search i {
+            text-align: center;
+            background-color: #f57224;
+            padding: 14px;
+            margin-left: -45px;
+            border-radius: 0 3px 3px 0;
+            font-size: 17px;
+            font-weight: bolder;
+            color: #f7f7f7;
+            cursor: pointer;
+        }
+
+    .cart {
+        margin-top: 3px;
+    }
+
+        .cart i {
+            cursor: pointer;
+            font-size: 35px;
+            color: #0f1568;
+        }
+
+    body {
+        background-color: #f5f5f5;
+    }
+
+    #container {
+        height: fit-content;
+        padding-top: 20px;
+        margin-top: 100px;
+        background: #f5f5f5;
+    }
+
+    .category {
+        /* height: 5000px; */
+        background-color: #fff;
+        /* margin-top: 150px; */
+    }
+
+    .slideshow-container {
+        border: none;
+        width: 1519px;
+        position: relative;
+        margin: auto;
+        height: 344px;
+        /*position: relative;*/
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+
+
+
+    .active,
+    .dot:hover {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+
+
+    .mySlides {
+        width: 900px;
+        margin: auto;
+    }
+
+    .img1 {
+        width: 1519px;
+        height: 344px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("assets/imgLazada/sl1.jpg");
+    }
+
+    .img2 {
+        width: 1519px;
+        height: 344px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("assets/imgLazada/sl2.jpg");
+    }
+
+    .img3 {
+        width: 1519px;
+        height: 344px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("assets/imgLazada/sl3.jpg");
+    }
+
+    .img4 {
+        width: 1519px;
+        height: 344px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("assets/imgLazada/sl4.jpg");
+    }
+
+    .img5 {
+        width: 1519px;
+        height: 344px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("assets/imgLazada/sl5.jpg");
+    }
+
+    .img6 {
+        width: 1519px;
+        height: 344px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("assets/imgLazada/sl6.jpg");
+    }
+
+    .category {
+        border: solid 1px silver;
+        position: absolute;
+        top: 116px;
+        left: 180px;
+        height: fit-content;
+        width: fit-content;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 12px;
+    }
+
+        .category ul {
+            list-style: none;
+            line-height: 26px;
+            padding-left: 5px;
+        }
+
+        .category li:hover {
+            background-color: #b7b7b7;
+            opacity: 0.5;
+        }
+
+        .category a:hover {
+            color: #f36d00;
+        }
+
+        .category a {
+            color: #757575;
+            font-size: 13px;
+        }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .categoryLst {
+        height: 297px;
+        width: 1188px;
+        margin: 15px 0 0 180px;
+        background-color: #fff;
+    }
+
+    .sliderImg {
+        margin-top: -3px;
+    }
+
+    .lstCate p {
+        margin-left: 180px;
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+    .suggest p {
+        margin-left: 180px;
+        font-size: 22px;
+        margin-top: 30px;
+    }
+
+    .imgShow {
+        border-top: 1.5px solid rgb(194, 194, 194);
+        display: flex;
+        width: 1188px;
+        margin-left: 180px;
+        justify-content: space-between;
+    }
+
+        .imgShow img {
+            width: 32.5%;
+            /* height: 100%; */
+        }
+
+
+    #footer {
+        width: 100%;
+        height: 500px;
+        background-color: #f4f4f6;
+    }
+
+    .cate {
+        display: flex;
+        color: #0f136d;
+        cursor: pointer;
+        /* justify-content: start; */
+    }
+
+        .cate:hover {
+            color: #f36d00;
+        }
+
+
+
+
+        .cate p {
+            font-size: 14px;
+            margin-right: 10px;
+            font-weight: 500;
+            margin-left: 180px;
+        }
+
+        .cate:hover + .categorySearch {
+            display: block;
+        }
+
+
+
+        .cate .ti-angle-down {
+            font-size: 14px;
+            margin-top: 5px;
+            font-weight: 800;
+        }
+
+
+    .categorySearch {
+        display: none;
+    }
+
+    .categorySearch {
+        border: solid 1px silver;
+        top: 150px;
+        left: 150px;
+        height: fit-content;
+        width: fit-content;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 12px;
+    }
+
+        .categorySearch ul {
+            list-style: none;
+            line-height: 26px;
+            padding-left: 5px;
+        }
+
+        .categorySearch li:hover {
+            background-color: #b7b7b7;
+            opacity: 0.5;
+        }
+
+        .categorySearch a:hover {
+            color: #f36d00;
+        }
+
+        .categorySearch a {
+            color: #757575;
+            font-size: 13px;
+        }
+
+    .homeLink {
+        background-color: #fff;
+        padding-bottom: 10px;
+        margin-top: 150px;
+    }
+
+        .homeLink a {
+            margin-left: 150px;
+            margin-top: 5px;
+            color: #1a9cb7;
+        }
+
+        .homeLink p {
+            margin-left: 5px;
+            margin-top: 5px;
+            color: #717171;
+        }
+
+        .homeLink i {
+            margin-top: 10px;
+            margin-right: 5px;
+            color: #717171;
+            margin-left: 10px;
+        }
+
+    .contain {
+        width: 1180px;
+        margin: auto;
+    }
+
+    #containCart {
+        margin-top: 160px;
+        display: flex;
+    }
+
+    .selectAll {
+        width: 788px;
+        height: 40px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .enter p {
+        margin-left: 40px;
+        font-size: 15px;
+        font-weight: 450;
+        margin-top: -22px;
+        color: #757575;
+    }
+
+    .enter input {
+        margin-left: 10px;
+        width: 17px;
+        height: 17px;
+        margin-top: 5px;
+    }
+
+    .enter {
+        margin-top: 7px;
+    }
+
+    .left {
+        width: 788px;
+        height: fit-content;
+        margin-left: 150px;
+    }
+
+    .del {
+        margin-right: 8px;
+        margin-top: 8px;
+        display: flex;
+    }
+
+    .right {
+        width: 380px;
+        height: fit-content;
+        background-color: #fff;
+        margin-left: 15px;
+    }
+
+    .locaDetail {
+        display: flex;
+    }
+
+    .location {
+        margin-left: 15px;
+        margin-top: 10px;
+        border-bottom: 1px solid #b7b7b7;
+        margin-right: 15px;
+        padding-bottom: 10px;
+    }
+
+        .location p {
+            margin-bottom: 10px;
+            color: #757575;
+            font-size: 14px;
+        }
+
+        .location i {
+            font-size: 25px;
+            color: #757575;
+        }
+
+        .location .locaDetail p {
+            color: rgb(33, 33, 33);
+            font-size: 13px;
+            margin-top: 7px;
+            margin-left: 7px;
+            font-weight: 450;
+        }
+
+    .inforOrder {
+        margin-top: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-bottom: 10px;
+        /* border-bottom: 1px solid #757575; */
+    }
+
+        .inforOrder p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+    .tempCal,
+    .ship {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .tempCal p,
+        .ship p {
+            color: #6a6a6a;
+            font-size: 14px;
+        }
+
+        .tempCal .price,
+        .ship .price {
+            font-size: 14px;
+            color: black;
+            font-weight: 450;
+        }
+
+    .total {
+        margin-top: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .total p {
+            font-size: 18px;
+        }
+
+    .totalPrice p {
+        font-size: 16px;
+        color: #f36d00;
+        font-weight: 450;
+    }
+
+    .addInfor {
+        margin-top: 5px;
+        margin-left: 230px;
+    }
+
+        .addInfor p {
+            font-size: 12px;
+            color: black;
+            font-weight: 450;
+        }
+
+    .cf input {
+        margin-top: 20px;
+        width: 90%;
+        margin-left: 5%;
+        height: 40px;
+        border: none;
+        background-color: #f36d00;
+        color: white;
+    }
+
+    .cf {
+        padding-bottom: 20px;
+    }
+
+    .vocher {
+        margin-left: 35px;
+    }
+
+    .enterOrder {
+        border: 1px solid #1a9cb7;
+        height: 38px;
+        width: 200px;
+        margin-right: 10px;
+        padding-left: 10px;
+        font-size: 14px;
+    }
+
+    .smt {
+        border: none;
+        background-color: #1a9cb7;
+        color: white;
+        height: 38px;
+        width: 110px;
+        font-size: 14px;
+        font-weight: 450;
+    }
+
+    .homeLinkPr {
+        margin-top: 10px;
+        display: flex;
+        margin-left: 150px;
+    }
+
+        .homeLinkPr i {
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+    #containPr {
+        margin-top: 160px;
+    }
+
+    .detailProduct {
+        width: 1230px;
+        height: fit-content;
+        margin: auto;
+        background-color: #fff;
+        margin-top: 15px;
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+        .detailProduct img {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+    .nameProduct {
+        width: 520px;
+        font-size: 22px;
+        margin-left: 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .addressShip {
+        width: 330px;
+        padding-bottom: 20px;
+        height: fit-content;
+        background-color: #fafafa;
+    }
+
+    .brandPro {
+        display: flex;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 15px;
+        border-bottom: 1px solid #b7b7b765;
+    }
+
+        .brandPro p {
+            margin-right: 5px;
+            margin-bottom: 20px;
+        }
+
+    .pricePro {
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-bottom: 1px solid #b7b7b765;
+        padding-bottom: 15px;
+    }
+
+    .priceVND {
+        font-size: 30px;
+        color: #f36d00;
+        margin-bottom: 10px;
+    }
+
+    .endow {
+        display: flex;
+    }
+
+    .endowPrice {
+        margin-left: 150px;
+    }
+
+    .patternPro {
+        margin-top: 25px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+    }
+
+    .quantityPro {
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    .quantityPro {
+        display: flex;
+        margin-top: 30px;
+    }
+
+        .quantityPro p {
+            width: 92px;
+        }
+
+    .detaiPro {
+        margin-right: 5.5px;
+    }
+
+
+
+    .quantityPro span button {
+        text-align: center;
+        border: none;
+        width: 30px;
+        height: 30px;
+        font-size: 25px;
+        font-weight: 500;
+        color: #b7b7b7;
+        /* background-color: #dadada; */
+    }
+
+        .quantityPro span button:hover {
+            background-color: #dadada;
+            color: #fff;
+        }
+
+    .quantityPro span input {
+        border: none;
+        text-align: center;
+        text-align: center;
+        font-size: 17px;
+        resize: none;
+        outline: none;
+    }
+
+    .buyBtn {
+        margin-left: 15px;
+        margin-top: 20px;
+        margin-right: 15px;
+    }
+
+        .buyBtn input {
+            border: none;
+            width: 255px;
+            height: 44px;
+            /* vertical-align: middle; */
+        }
+
+        .buyBtn .btn1 {
+            background-color: #ffb916;
+            font-size: 16px;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+            .buyBtn .btn1:hover {
+                background-color: #e19d00;
+                font-size: 16px;
+                color: #fff;
+            }
+
+        .buyBtn .btn2 {
+            background-color: #f57224;
+            font-size: 16px;
+            color: #fff;
+        }
+
+            .buyBtn .btn2:hover {
+                background-color: #d65205;
+                font-size: 16px;
+                color: #fff;
+            }
+
+    .optionShip p {
+        font-size: 12px;
+        font-weight: 500;
+        color: #757575;
+    }
+
+    .fullShip {
+        margin-left: 15px;
+        margin-top: 25px;
+    }
+
+    .localShip {
+        display: flex;
+        margin-top: 15px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #7575752f;
+    }
+
+        .localShip p {
+            font-size: 14px;
+            width: 190px;
+        }
+
+        .localShip a {
+            font-size: 13px;
+            margin-left: 20px;
+            color: #1a9cb7;
+        }
+
+    .standard {
+        margin-top: 15px;
+        display: flex;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #7575752f;
+    }
+
+        .standard .GH {
+            font-size: 14px;
+            margin-top: 10px;
+            margin-right: 50px;
+        }
+
+        .standard .free {
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 10px;
+            margin-left: 70px;
+        }
+
+    .payMoney {
+        margin-top: 15px;
+        display: flex;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #7575752f;
+    }
+
+        .payMoney p {
+            font-size: 14px;
+            width: 250px;
+        }
+
+    .tableReview {
+        display: flex;
+        text-align: center;
+        border-bottom: 1px solid #b7b7b7;
+    }
+
+    .votePositive,
+    .orderTrue,
+    .rateResponse {
+        width: calc(100%/3);
+        font-size: 12px;
+        color: #757575;
+    }
+
+    .tableReview h1 {
+        font-size: 26px;
+        margin-top: 20px;
+        font-weight: 450;
+        margin-bottom: 10px;
+        color: black;
+    }
+
+    .tableReview p {
+        margin-top: 10px;
+    }
+
+    .welcomeShop {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+        .welcomeShop a {
+            font-size: 13px;
+            font-weight: 500;
+            color: #16849b;
+        }
+
+    .middelProduct {
+        width: 1400px;
+        height: fit-content;
+        margin: auto;
+        margin-left: 10%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .presentPro {
+        width: 1200px;
+        background-color: #fff;
+    }
+
+    .rightMiddel {
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+    }
+
+    .presentPro h1 {
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 18px;
+        font-weight: 450;
+        background-color: rgba(0, 0, 0, .02);
+        padding: 14px 0;
+        padding-left: 14px;
+    }
+
+    .textDetailProduct {
+        white-space: pre-line;
+        color: rgba(0, 0, 0, .8);
+        font-size: .875rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.7;
+    }
+
+    .inforProductDetail {
+        width: 100%;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 30px;
+        font-size: 16px;
+        white-space: inherit;
+        color: rgba(0, 0, 0, .8);
+        /* font-size: .875rem; */
+        /* overflow: hidden;
+                text-overflow: ellipsis; */
+        line-height: 1.7;
+    }
+
+    .botProduct {
+        width: 1000px;
+        height: fit-content;
+        margin: 15px auto;
+    }
+
+    .allAttr {
+        background-color: #fffbf8;
+        border: 1px solid #f9ede5;
+        display: flex;
+        margin: 20px;
+    }
+
+    .voteStar {
+        width: 20%;
+        height: 70px;
+    }
+
+    .comment {
+        display: flex;
+        width: 691px;
+        height: 84px;
+    }
+
+    .fiveStar,
+    .fourStar,
+    .threeStar,
+    .twoStar,
+    .oneStar {
+        width: 100px;
+        height: 40px;
+        margin-right: 30px;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: 1px solid #bbb;
+        background-color: #fff;
+    }
+
+    /* .haveComment {} */
+
+    /* .haveImage {} */
+
+
+
+    .topContainerShop {
+        width: 100%;
+        height: fit-content;
+        background-color: #fff;
+        margin-top: 145px;
+        display: flex;
+        justify-content: space-evenly;
+        padding-bottom: 20px;
+    }
+
+    .rightInforShop {
+        width: 800px;
+        height: fit-content;
+        /* background-color: #1a9cb7; */
+    }
+
+    .topContainerShop .inforShop {
+        width: 400px;
+        height: 150px;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        margin-top: 35px;
+        border-radius: 5px;
+    }
+
+    .topContainerShop .inforShop {
+        display: block;
+    }
+
+        .topContainerShop .inforShop .nameAndAvt {
+            display: flex;
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+
+            .topContainerShop .inforShop .nameAndAvt img {
+                border-radius: 50%;
+                border: 4px solid #bbb;
+            }
+
+            .topContainerShop .inforShop .nameAndAvt p {
+                font-size: 20px;
+                color: #fff;
+                margin-top: 25px;
+                margin-left: 15px;
+            }
+
+    .twoBtnView {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+        .twoBtnView a {
+            color: #fff;
+            padding: 5px 40px;
+            border: 1px solid #fff;
+            margin-right: 20px;
+            border-radius: 3px;
+        }
+
+    .rightInforShop {
+        display: flex;
+        margin-top: 60px;
+    }
+
+    .leftTopViewShop {
+        margin-right: 100px;
+    }
+
+    .rightTopViewShop {
+        margin-left: 100px;
+    }
+
+        .leftTopViewShop p,
+        .rightTopViewShop p {
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+    .botInfor {
+        background-color: #fff;
+        padding-bottom: 20px;
+    }
+
+        .botInfor ul {
+            display: flex;
+            list-style-type: none;
+            margin-left: 72px;
+        }
+
+            .botInfor ul li {
+                margin-right: 80px;
+            }
+
+                .botInfor ul li a {
+                    font-size: 15px;
+                    color: black;
+                }
+
+                    .botInfor ul li a:hover {
+                        font-size: 15px;
+                        color: #f36d00;
+                    }
+
+    #containLogin {
+        margin-top: 200px;
+    }
+
+    .topLogin {
+        text-align: center;
+    }
+
+    .midelLogin {
+        width: 820px;
+        height: fit-content;
+        background-color: #fff;
+        margin: 30px auto;
+        display: flex;
+        border-radius: 3px;
+    }
+
+    .leftLogin {
+        width: 500px;
+        margin-left: 20px;
+    }
+
+        .leftLogin p {
+            font-size: 12px;
+            margin-bottom: 7px;
+            margin-top: 20px;
+        }
+
+        .leftLogin input {
+            width: 80%;
+            height: 40px;
+            font-size: 15px;
+            padding-left: 10px;
+            border: 1px solid #bbb;
+            border-radius: 3px;
+        }
+
+    .topLogin h1 {
+        font-size: 22px;
+        font-weight: 450;
+    }
+
+    .leftLogin a {
+        color: #16849b;
+        margin-left: 310px;
+    }
+
+    .rightLogin {
+        margin-top: 30px;
+    }
+
+        .rightLogin input {
+            padding: 17px 90px;
+            background-color: #f57224;
+            border: none;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 50px;
+        }
+
+            .rightLogin input:hover {
+                background-color: #d65205;
+            }
+
+        .rightLogin p {
+            color: #757575;
+            font-style: 15px;
+        }
+
+        .rightLogin a {
+            color: #1a9cb7;
+        }
+
+    .fullBotLogin {
+        width: 900px;
+        margin: auto;
+        padding: 10px 30px;
+        background-color: #fff;
+        margin-top: 20px;
+    }
+
+
+    .citySignup {
+        margin-top: -30px;
+        margin-bottom: 15px;
+    }
+
+        .citySignup .city {
+            width: 100%;
+            height: 40px;
+            font-size: 15px;
+            padding-left: 10px;
+            border: 1px solid #bbb;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            color: black;
+        }
+
+            .citySignup .city:hover {
+                background-color: #fff;
+                color: black;
+            }
+
+        .citySignup p {
+            font-size: 12px;
+            margin-bottom: 7px;
+            margin-top: 20px;
+            color: black;
+        }
+
+    .veriSignup {
+        display: flex;
+    }
+
+        .veriSignup input {
+            margin-top: -10px;
+        }
+
+        .veriSignup p {
+            width: 300px;
+            font-size: 12px;
+            margin-top: -5px;
+            margin-left: 5px;
+            margin-bottom: 10px;
+        }
+
+    .SignUpBtn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .optionLinkLogin {
+        margin-top: -20px;
+        margin-left: 10px;
+    }
+
+    .fullBotLogin .sendBtn input {
+        background-color: #f57224;
+    }
+
+        .fullBotLogin .sendBtn input:hover {
+            background-color: #d65205;
+        }
+
+    #containChangeInfor {
+        margin-top: 150px;
+        display: flex;
+    }
+
+    .changeInforLeft {
+        width: 400px;
+        height: fit-content;
+    }
+
+
+
+    .nameProfile img {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 2px solid #757575;
+    }
+
+    .nameProfile {
+        display: flex;
+        margin-left: 200px;
+        margin-top: 20px;
+        padding-bottom: 15px;
+        padding-left: 10px;
+        border-bottom: 1px solid #b7b7b7;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+
+    .nameMainProfile p {
+        margin-bottom: 17px;
+    }
+
+    .mainProfile ul li {
+        margin-bottom: 20px;
+    }
+
+        .mainProfile ul li a {
+            margin-bottom: 20px;
+            color: rgba(0, 0, 0, .65);
+        }
+
+    .mainProfile ul {
+        list-style-type: none;
+    }
+
+    .mainProfile {
+        margin-left: 200px;
+    }
+
+    .orderProfile {
+        margin-left: 200px;
+    }
+
+    .nameMainProfile {
+        display: flex;
+    }
+
+    .orderProfile {
+        display: flex;
+    }
+
+    .changeInforProfileUser {
+        display: flex;
+    }
+
+    .changeInforRight {
+        width: 993px;
+        height: fit-content;
+        background-color: #fff;
+    }
+
+    .topChangeInfor {
+        border-bottom: 1px solid #b7b7b7;
+        padding-bottom: 20px;
+        margin: 15px 40px;
+    }
+
+    .changeLeft {
+        display: flex;
+    }
+
+    .changeLeft {
+        width: 600px;
+    }
+
+    .changeLeftLeft p {
+        margin-right: 20px;
+        margin-bottom: 50px;
+    }
+
+    .changeLeft {
+        margin: 15px 60px;
+    }
+
+    .changeAvt img {
+        border-radius: 50%;
+        border: 2px solid #757575;
+    }
+
+    .custom-file-input::-webkit-file-upload-button {
+        visibility: hidden;
+    }
+
+    .custom-file-input::before {
+        content: 'Chọn Ảnh';
+        display: inline-block;
+        background: linear-gradient(top, #f9f9f9, #e3e3e3);
+        border: 1px solid rgb(225, 225, 225);
+        border-radius: 3px;
+        padding: 13px 17px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        text-shadow: 1px 1px #fff;
+        font-weight: 500;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .custom-file-input:hover::before {
+        border-color: rgb(120, 120, 120);
+        /* background-color: rgb(145, 145, 145); */
+    }
+
+    .custom-file-input:active::before {
+        background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+    }
+
+    .btnInputChoosen input {
+        width: 100px;
+    }
+
+    .changeAvt {
+        text-align: center;
+        width: 300px;
+        margin-bottom: 90px;
+    }
+
+        .changeAvt img {
+            margin-bottom: 20px;
+        }
+
+        .changeAvt input {
+            margin-left: 20px;
+        }
+
+    .saveChangeProfile {
+        border: none;
+        padding: 10px 25px;
+        background-color: #f36d00;
+        color: #fff;
+        font-size: 15px;
+    }
+
+        .saveChangeProfile:hover {
+            background-color: #d65205;
+        }
+
+    .buyBtn .btn1:hover, .buyBtn .btn2:hover {
+        cursor: pointer;
+    }
+
+    .category1::-webkit-scrollbar {
+        width: 0 !important;
+    }
+
+    .optionPro:hover {
+        border: 1px solid #f6823d;
+        cursor: pointer;
+    }
+
+    .optionPro {
+        border: 1px solid black;
+    }
+
+    input[type='checkbox'] {
+        display: block;
+        width: 15px;
+        height: 15px;
+        /*margin-right: 10px;*/
+        /*margin-top: 30px;*/
+        border: 1px solid #EFF0F5;
+        accent-color: rgb(246 130 61);
+    }
+
+        input[type='checkbox']:hover {
+            outline: 1px solid rgb(246 130 61);
+            cursor: pointer;
+        }
+
+    input[type='checkbox'] {
+        width: 140px !important;
+        height: 30px !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        outline: 1px solid rgb(24 144 255);
+        border-radius: 3px;
+        box-shadow: none;
+        font-size: 0.8em;
+        text-align: center;
+        line-height: 1em;
+        background: rgb(255, 255, 255);
+    }
+
+        input[type='checkbox']:checked:after {
+            content: '✔';
+            width: 100px;
+            height: 30px;
+            color: rgb(246 130 61);
+        }
+</style>
+
+
+<div style="height: 110px" id="header">
+    <div class="topHeader">
+
+        <ul>
+            @if(ViewBag.User != null){
+                <li><a class="linkTopHeader1" href="mainProductShop" target="_blank">BÁN HÀNG CÙNG LAZADA</a></li>
+                <li><a class="linkTopHeader1" href="#">CHĂM SÓC KHÁCH HÀNG</a></li>
+                <li><a class="linkTopHeader" href="myOrder">KIỂM TRA ĐƠN HÀNG</a></li>
+                @*<li><a class="linkTopHeader" href="changeInfor">TÀI KHOẢN ${sessionScope.acc.getUserID().toUpperCase()}</a></li>
+                <li><a class="linkTopHeader" href="logout">ĐĂNG XUẤT</a></li>*@
+            }
+            @*<c:if test="${sessionScope.acc != null}">
+
+            </c:if>
+            <c:if test="${sessionScope.acc == null}">*@
+            @if (ViewBag.User == null)
+            {
+                <li><a class="linkTopHeader1" href="mainProductShop" target="_blank">BÁN HÀNG CÙNG LAZADA</a></li>
+                <li><a class="linkTopHeader1" href="#">CHĂM SÓC KHÁCH HÀNG</a></li>
+                <li><a class="linkTopHeader" asp-controller="Home" asp-action="CheckOrder">KIỂM TRA ĐƠN HÀNG</a></li>
+                @*<li><a class="linkTopHeader" asp-controller="Home" asp-action="Login">ĐĂNG NHẬP</a></li>
+                <li><a class="linkTopHeader" href="signup">ĐĂNG KÝ</a></li>*@
+            }
+            @*</c:if>
+            <c:if test="${sessionScope.acc.getUserStatus() == 3}">
+                <li><a class="linkTopHeader1" href="admin" target="_blank">Quản lý</a></li>
+            </c:if>*@
+        </ul>
+
+    </div>
+    <div class="botHeader">
+        <div class="logo">
+            <a asp-controller="Home" asp-action="Home"><img src="https://scontent.fhan14-2.fna.fbcdn.net/v/t1.15752-9/311277839_530609275576335_6583479966941620848_n.png?_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_ohc=IDajbLFGcFgAX9oUjo-&_nc_ht=scontent.fhan14-2.fna&oh=03_AdT40sfUXUAQVyeDH3XprnmatLqmdT3WO1abScxaKfRLUA&oe=63925EB9" alt="logo" width="130px"></a>
+        </div>
+        <div class="search">
+            <form asp-controller="Home" asp-action="Search" method="get">
+                <input name="searchLapada" type="text" placeholder="Tìm kiếm trên Lapada">
+                <i style="position: absolute; height: 45px; width: 45px;" class="ti-search">
+                    <input style="position: relative; width: 47px;height: 45px;margin-top: -35px; margin-left: -14px;
+                       background-color: rgba(255, 255, 255, 0.033);" type="submit" value="">
+                </i>
+            </form>
+        </div>
+        <div class="cart">
+            <a asp-controller="Home" asp-action="Cart" asp-route-id="">
+                <i class="mdi mdi-cart-outline">Cart</i>
+            </a>
+        </div>
+    </div>
+        </div
+<div class="w3-sidebar w3-bar-block w3-border-right" style="position: fixed;top: 0;
+             display: none; right: 0;background: #fff;width: 500px;height: 100vh;z-index: 999;overflow: auto;"
+     id="mySidebar">
+    <div style="display: block;">
+        <div style="display: flex">
+            <p style="margin-bottom: 20px; margin-left: 40px; margin-top: 20px; font-size: larger;">
+                Địa chỉ nhận hàng
+            </p>
+            <a onclick="pupUpOpen();w3_close()" style="margin-bottom: 20px; margin-left: 90px; margin-top: 25px; font-size: medium; color: #1a9cb7">Thêm địa chỉ mới</a>
+
+        </div>
+        @*<c:forEach items="${lstAdd}" var="o">
+        <div style="display: flex; border: 1px solid #dadada; width: 423px; margin: auto; margin-top: 15px; border-radius: 10px;">
+        <input style="margin-left: 15px; margin-right: 15px; margin-top: 30px;
+        width: 18px; height: 18px;" type="radio" name="addCh" id="" value="${o.getAddressID()}">
+        <div style="margin-top: 20px;">
+        <div style="font-size: 16px; display: flex;">
+        <p style="margin-right: 20px; margin-bottom: 10px;">${o.getCusName()}</p>
+        <p>20482948</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+        <p style="font-size: 14px; width: 350px;">${o.getAddressDetail()}</p>
+        <c:forEach items="${lstCity}" var="ci">
+        <c:if test="${o.getCityID().equals(ci.getCityID())}">
+        <c:forEach items="${lstDis}" var="d">
+        <c:if test="${o.getDistrictID().equals(d.getDistrictID())}">
+        <p style="font-size: 12px;">Mã vùng: ${c.getCityName()} - ${d.getDistrictName()}</p>
+        </c:if>
+        </c:forEach>
+        </c:if>
+        </c:forEach>
+        </div>
+        </div>
+        </div>
+        </c:forEach>*@
+
+        @*<button style="color: #757575;background-color: #eff0f5;border-color: transparent;text-decoration: none;
+                        font-size: 14px;min-width: 168px;height: 40px;line-height: 40px;margin-left: 50px; margin-top: 50px; margin-bottom: 50px"
+                onclick="w3_close()" class="w3-bar-item w3-large">
+            HUỶ
+        </button>
+        <button style="color: #fff;background-color: #1a9cb7;border-color: transparent;text-decoration: none;
+                        font-size: 14px;min-width: 168px;height: 40px;line-height: 40px;margin-left: 50px; margin-top: 50px;"
+                onclick="loadNewLocation();w3_close()" class="w3-bar-item w3-large">
+            LƯU
+        </button>*@
+    </div>
+</div>
+<!--//center-->
+<div class="w3-sidebar w3-bar-block w3-border-right" style="position: fixed;top: 100px;
+             display: none; right: 170px;background: #fff;width: 1100px;height: 80vh;z-index: 999;overflow: auto;
+             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"
+     id="pupup">
+    <div style=" background-color: rgba(255, 255, 255, 0);margin-top: 25px; margin-left: 20px;"
+         class="changeInforRight">
+        <div style="background-color: white; padding: 10px 20px; width: 990px; margin-left: 0" class="topChangeInfor">
+            <h1 style="font-size: 18px; font-weight: 450;">Thêm địa chỉ mới</h1>
+            <p style="font-size: 14px; color: #555555;margin-top: 5px;">Địa chỉ nhận hàng</p>
+        </div>
+        <!--<form action="addAddress" method="post">-->
+        <div style="width: 1000px; display: block;height: fit-content; background-color: white; "
+             class="changeInforProfileUser">
+            <div style="width: 1000px; height: fit-content; background-color: white; display: flex;">
+                <div style="width: 50%; margin-left: 50px; margin-right: 30px; margin-top: 30px;">
+                    <p style="font-size: 14px;margin-bottom: 7px;">Họ tên</p>
+                    <input style="width: 410px; height: 40px; margin-bottom: 35px;" type="text"
+                           placeholder="Họ Tên" id="usName">
+                    <p style="font-size: 14px;margin-bottom: 7px;">Số điện thoại</p>
+                    <input style="width: 410px; height: 40px; margin-bottom: 35px;" type="text"
+                           placeholder="Xin vui lòng nhập số điện thoại của bạn" id="usPhone">
+                </div>
+                <div style="width: 50%; margin-left: 30px; margin-right: 30px;  margin-top: 30px;">
+                    <p style="font-size: 14px;margin-bottom: 7px;">Địa chỉ nhận hàng</p>
+                    <input style="width: 410px; height: 40px; margin-bottom: 35px;" type="text"
+                           placeholder="Vui lòng nhập địa chỉ của bạn" id="usAdd">
+                    <div id="locationAddress">
+                        <p style="font-size: 14px;margin-bottom: 7px;">Tỉnh/ Thành phố</p>
+                        <select id="usCity" style="width: 410px; height: 40px; margin-bottom: 35px;" required id="country_id">
+                            <option value="" disabled="" selected="">Chọn Tỉnh/Thành Phố</option>
+                            <c:forEach items="${lstCity}" var="o">
+                                <option value="${o.getCityID()}">${o.getCityName()}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                    <p style="font-size: 14px;margin-bottom: 7px;">Quận/ Huyện</p>
+                    <select style="width: 410px; height: 40px; margin-bottom: 25px;" required id="usDistrict" class="form-select" aria-label="Default select example">
+                        <option disabled="" selected="">Chọn Quận/Huyện</option>
+                    </select>
+                </div>
+
+
+            </div>
+            <!--                        <button style="background-color: #f57224;border: none; color: white;
+                                            font-size: 14px;min-width: 168px;height: 40px;line-height: 40px;margin-left: 780px;
+                                            margin-top: 30px; margin-bottom: 40px;">Lưu</button>-->
+            <div style="display: flex">
+                <button style="background-color: #dadada;border: none; color: white;
+                                font-size: 14px;min-width: 168px;height: 40px;line-height: 40px;margin-left: 515px;
+                                margin-top: 30px; margin-bottom: 40px;"
+                        onclick="pupUpClose()" class="w3-bar-item w3-large">
+                    HUỶ
+                </button>
+                <button style="background-color: #f57224;border: none; color: white;
+                                font-size: 14px;min-width: 168px;height: 40px;line-height: 40px;margin-left: 100px;
+                                margin-top: 30px; margin-bottom: 40px;"
+                        onclick="pupUpClose();saveLocation()" class="w3-bar-item w3-large">
+                    LƯU
+                </button>
+            </div>
+            <!--</form>-->
+        </div>
+    </div>
+</div>
+
+<div id="containPr">
+    <div class="homeLinkPr">
+        <a id="content" href="">Sản Phẩm</a>
+        <i class="ti-angle-right"></i>
+        <p>@ViewBag.product.ProductName</p>
+    </div>
+    <div class="rightProductOrder">
+        <div class="detailProduct">
+            <!-- //1180 -->
+            <img src=@ViewBag.product.ProductImage alt="" width="330px" height="330px">
+            <div class="detaiPro">
+                <div class="nameProduct">
+                    <p>@ViewBag.product.ProductName</p>
+                </div>
+                @*<div style="border: none;" class="brandPro">
+                <p>Thương hiệu: </p>
+                <a href="#">${pr.getProductBrand()}</a>
+                </div>*@
+                <div class="detailPrice">
+                    <div style="border-bottom: 1px solid #e3e3e3" class="pricePro">
+                        <p id="priceOpLoad" class="priceVND">
+                            @ViewBag.product.ProductPrice ₫
+                        </p>
+                    </div>
+                </div>
+                <form asp-controller="Home" asp-action="BuyProduct">
+                    <div class="quantityPro">
+                        <p>Số lượng</p>
+                        <span>
+                            <button type="button" onclick="sub(1)">-</button>
+                            <input name="quantity" type="number" id="myNumber" value="1" min="1" max=@ViewBag.product.ProductNumber step="1" autocomplete="off"
+                                   width="100%" height="100%">
+                            <button type="button" onclick="add(@ViewBag.product.ProductNumber)">+</button>
+                        </span>
+                    </div>
+                    <input name="idPro" type="text" value=@ViewBag.product.ProductId hidden>
+                    <div class="buyBtn">
+                        <a>
+                            <button onclick="buy(@ViewBag.product.ProductId)" style="width: 260px; border: none; background-color: #ffffff00">
+                                <input class="btn1" type="submit" value="Thêm vào giỏ hàng">
+                            </button>
+                        </a>
+                </form>
+                <form asp-controller="Home" asp-action="BuyNowProduct">
+                    <input name="idPro" type="text" value=@ViewBag.product.ProductId hidden>
+                    <input name="quantity" type="number" id="myNumber1" autocomplete="off" width="100%" height="100%" hidden>
+                    <a>
+                        <button class="addCart" onclick="addCart(@ViewBag.product.ProductId)" style="width: 260px; border: none;
+                                                        background-color: #ffffff00">
+                            <input class="btn2" type="submit" value="Mua ngay">
+                        </button>
+                    </a>
+                </form>
+            </div>
+
+            <!--<p id="hello"></p>-->
+            <div id="btnCheckB" style="display: flex" class="patternPro">
+                @*<p>MẪU MÃ</p>*@
+                @*<div style="min-height: 20px; max-height: 200px;width: 450px;  margin-left: 10px; margin-top: -10px">
+                <div style="overflow: scroll; overflow-x: hidden; width: 100%; height: 100%;padding-top: 10px;display: flex; flex-wrap: wrap;" class="category1">
+                <c:forEach items="${ListO}" var="o">
+                <%--<c:forEach begin="1" end="20">
+                --%>
+                <div>
+                <div style="position: relative; margin-bottom: 10px; margin-left: 7px;" class="checkBtn">
+                <p class="optionPro" style="position: absolute;top: 5px;width: 140px; height: 30px; border: none; text-align: center; overflow: hidden; margin-top: 0px;">${o.getOptionname()}</p>
+                <input style="background-color: #ffffff00;position: relative; " type="checkbox" name="options[]" onclick="loadPrice(${o.getOptionID()});onlyOne(this);" value="${o.getOptionID()}" />
+                </div>
+                </div>
+
+                </c:forEach>
+                </div>
+                </div>*@
+            </div>
+
+            <!--<form action="addOrBuy" method="get">-->
+
+
+            <c:if test="${sessionScope.acc == null}">
+
+            </c:if>
+            <c:if test="${sessionScope.acc != null}">
+
+            </c:if>
+
+            <!--</form>-->
+
+        </div>
+
+        <div class="addressShip">
+            <div class="fullShip">
+                <div class="optionShip">
+                    <p>Tuỳ chọn gian hàng</p>
+                </div>
+                @*<div class="localShip">
+                <c:if test="${sessionScope.acc == null}">
+                <i style="font-size: 24px; margin-top: 7px; margin-right: 5px;" class="ti-location-pin"></i>
+                <p>Hồ Chí Minh, Quận 1, Phường Phạm Ngũ Lão</p>
+                <a href="login">THAY ĐỔI</a>
+                </c:if>
+                <c:if test="${sessionScope.acc != null}">
+                <i style="font-size: 24px; margin-top: 7px; margin-right: 5px;" class="ti-location-pin"></i>
+                <p id="locationOne">${detailL}</p>
+                <a onclick="w3_open()">THAY ĐỔI</a>
+                </c:if>
+
+                </div>*@
+
+                <div class="standard">
+                    <i style="font-size: 24px; margin-top: 5px; margin-right: 10px; color: black;"
+                       class="mdi mdi-truck"></i>
+                    <p class="GH">GH tiêu chuẩn</p>
+                    <p class="free">Miễn phí</p>
+                </div>
+                <div class="payMoney">
+                    <i style="font-size: 24px; margin-top: 7px; margin-right: 5px;"
+                       style="font-size: 24px; margin-top: 7px; margin-right: 5px;" class="ti-money"></i>
+                    <p>Thanh toán khi nhận hàng. (Không được đồng kiểm)</p>
+                </div>
+            </div>
+            <div class="fullShip">
+                <div class="optionShip">
+                    <p>Đổi trả và Bảo hành</p>
+                </div>
+                <div style="border: none;" class="localShip">
+                    <i style="font-size: 20px; margin-top: 8px; margin-right: 7px;" class="ti-reload"></i>
+                    <p style="width: 250px; margin-top: 8px;">7 ngày trả hàng cho Nhà bán hàng</p>
+                </div>
+                <div style="border: none;" class="localShip">
+                    <i style="font-size: 24px; margin-top: 5px; margin-right: 5px;"
+                       class="mdi mdi-shield-outline"></i>
+                    <p style="margin-top: 12px;">Bằng Tem bảo hành 6 tháng</p>
+                </div>
+            </div>
+            <div style="width: 100%; height: 10px; background-color: #fff;" class="breakShop">
+            </div>
+            <div style="margin-top: 10px;" class="fullShip">
+                <div class="optionShip">
+                    <p>Được bán bởi</p>
+                </div>
+                <div style=" margin-top: 1px;" class="localShip">
+                    <p style="font-size: 16px; width: 250px; margin-top: 8px;">
+                        Lemart
+                    </p>
+                </div>
+                <div class="tableReview">
+                    <div style="border-right:1px solid #b7b7b7 ;" class="votePositive">
+                        <p>Tổng số sản phẩm</p>
+                        <h1>200</h1>
+                    </div>
+                    <div class="orderTrue">
+                        <p>Giao đúng hạn</p>
+                        <h1>100%</h1>
+                    </div>
+                    <div style="border-left:1px solid #b7b7b7 ;" class="rateResponse">
+                        <p>Voucher</p>
+                        <h1>20%</h1>
+                    </div>
+                </div>
+                <div class="welcomeShop">
+                    <a href="viewShop">ĐẾN GIAN HÀNG</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="middelProduct">
+    <div class="presentPro">
+        <h1>MÔ TẢ SẢN PHẨM</h1>
+        <div style="width: 950px" class="textDetailProduct">
+            <p class="inforProductDetail">@ViewBag.product.ProductDescription</p>
+        </div>
+
+        <div style="width: 100%; height: 20px; background-color: #f5f5f5;" class="breakVote">
+        </div>
+
+
+    </div>
+
+    @*<div class="rightMiddel">
+    </div>*@
+
+</div>
+<div style="margin-bottom: 30px" class="suggest">
+    <p style="margin-bottom: 10px; margin-left: 145px">Dành riêng cho bạn</p>
+    <div id="content" style="display: flex; flex-wrap: wrap; width: 1200px; margin: 0 165px 50px 142px" class="product">
+
+        @for (int i = 0; i < 6; i++)
+        {
+            <a asp-controller="Home" asp-action="DetailProduct" asp-route-id="@ViewBag.Products[i].ProductId" class="proH" style="margin-top: 10px; margin-right: 5px">
+                <div style="width: 185px; height: 325px; padding: 0 5px 0 3px; margin: 5px 10px 0 0;" class="productCount">
+                    <div style="width: 190px; height: 325px; background-color: white;" class="product-lst">
+                        <img src=@ViewBag.Products[i].ProductImage width="189px" height="189px" alt="alt" />
+                        <p style="width: 173px; height: 36px;font-size: 14px ;line-height: 18px; color: black;overflow: hidden; margin: 10px 5px 5px 5px">@ViewBag.Products[i].ProductName</p>
+                        <div style="display: flex">
+                            <p style="margin: 5px 5px 0 7px; color: #f57224; font-size: 18px">@ViewBag.Products[i].ProductPrice ₫</p>
+                        </div>
+                        <p style="margin: 3px 5px 0 130px; opacity: 0.7; font-size: 12px; color: black">
+                            Còn
+                            @ViewBag.Products[i].ProductNumber
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+        }
+
+    </div>
+</div>
+
+
+
+
+
+<jsp:include page="footer.jsp" />
+
+
+
+
+
+@section Scripts{
+
+    <script type="text/javascript">
+        
+    </script>
+    }
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function add(element) {
+            var el = document.getElementById("myNumber").value;
+            var el1 = document.getElementById("myNumber1").value;
+            if (el < element) {
+                document.getElementById("myNumber").value = ++el;
+                document.getElementById("myNumber1").value = ++el1;
+            } else {
+                document.getElementById("myNumber").value = element;
+                document.getElementById("myNumber1").value = element;
+            }
+        }
+        function sub(element) {
+            var el = document.getElementById("myNumber").value;
+            var el1 = document.getElementById("myNumber1").value;
+            if (el > element) {
+                document.getElementById("myNumber").value = --el;
+                document.getElementById("myNumber1").value = --el1;
+            }
+        }
+    </script>
